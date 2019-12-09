@@ -22,7 +22,7 @@
                         <label>Codigo: </label>
                         <input type="text" class="form form-control" readonly="" name="id" value="${em.id}">
                         <label>Nombre: </label>
-                        <input type="text" class="form form-control" name="nombre" value="${em.nombre}">
+                        <input type="text" class="form form-control" required name="nombre" value="${em.nombre}">
                         <br>
                      
                         <br>

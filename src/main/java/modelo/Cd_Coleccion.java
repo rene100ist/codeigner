@@ -10,15 +10,15 @@ package modelo;
  * @author rene.linaresusam
  */
 public class Cd_Coleccion {
-    private int isbn,cod_tienda,id;
+    private int id,cod_tienda;
     private String nombre_col;
     private double pvpC;
     //foranea
-    private int promotor;
-    private String nombrePromo;
+    private int promotor, grupo;
+    private String nombrePromo,nombGrupo;
 
-    public Cd_Coleccion(int isbn) {
-        this.isbn = isbn;
+    public Cd_Coleccion(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -27,22 +27,6 @@ public class Cd_Coleccion {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNombrePromo() {
-        return nombrePromo;
-    }
-
-    public void setNombrePromo(String nombrePromo) {
-        this.nombrePromo = nombrePromo;
-    }
-
-    public int getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
     }
 
     public int getCod_tienda() {
@@ -76,4 +60,33 @@ public class Cd_Coleccion {
     public void setPromotor(int promotor) {
         this.promotor = promotor;
     }
+
+    public String getNombrePromo() {
+        return nombrePromo;
+    }
+
+    public void setNombrePromo(String nombrePromo) {
+        this.nombrePromo = nombrePromo;
+    }
+
+    public int getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(int grupo) {
+        this.grupo = grupo;
+    }
+
+    public String getNombGrupo() {
+        return nombGrupo;
+    }
+
+    public void setNombGrupo(String nombGrupo) {
+        this.nombGrupo = nombGrupo;
+    }
+
+   
+    
+    
+    
 }

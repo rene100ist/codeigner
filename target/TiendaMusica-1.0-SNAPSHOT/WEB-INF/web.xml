@@ -20,6 +20,26 @@
         <servlet-name>ColeccionServlet</servlet-name>
         <servlet-class>controller.ColeccionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>IndividualServlet</servlet-name>
+        <servlet-class>controller.IndividualServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PistasServlet</servlet-name>
+        <servlet-class>controller.PistasServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GrupoServlet</servlet-name>
+        <servlet-class>controller.GrupoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DEdicionServlet</servlet-name>
+        <servlet-class>controller.DEdicionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UsuaServlet</servlet-name>
+        <servlet-class>controller.UsuaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaisServlet</servlet-name>
         <url-pattern>/pais</url-pattern>
@@ -39,6 +59,26 @@
     <servlet-mapping>
         <servlet-name>ColeccionServlet</servlet-name>
         <url-pattern>/coleccion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IndividualServlet</servlet-name>
+        <url-pattern>/individual</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PistasServlet</servlet-name>
+        <url-pattern>/pistas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GrupoServlet</servlet-name>
+        <url-pattern>/grupo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DEdicionServlet</servlet-name>
+        <url-pattern>/dedicion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuaServlet</servlet-name>
+        <url-pattern>/usua</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

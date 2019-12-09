@@ -10,22 +10,24 @@ package modelo;
  * @author rene.linaresusam
  */
 public class Cd_individual {
-    private int isbn,cod_tienda;
+    private int id,cod_tienda;
     private String nombre_cd;
      private double pvp;
     //foranea
-   private int artista, cd_coleccion;
+   private int artista, pista;
+   //inner join
+   private String nombArtista, nombPista, tDuracion;
 
-    public Cd_individual(int isbn) {
-        this.isbn = isbn;
+    public Cd_individual(int id) {
+        this.id = id;
+    }
+ 
+    public int getId() {
+        return id;
     }
 
-    public int getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCod_tienda() {
@@ -60,13 +62,37 @@ public class Cd_individual {
         this.artista = artista;
     }
 
-    public int getCd_coleccion() {
-        return cd_coleccion;
+    public String getNombArtista() {
+        return nombArtista;
     }
 
-    public void setCd_coleccion(int cd_coleccion) {
-        this.cd_coleccion = cd_coleccion;
+    public void setNombArtista(String nombArtista) {
+        this.nombArtista = nombArtista;
     }
-   
+
+    public int getPista() {
+        return pista;
+    }
+
+    public void setPista(int pista) {
+        this.pista = pista;
+    }
+
+    public String getNombPista() {
+        return nombPista;
+    }
+
+    public void setNombPista(String nombPista) {
+        this.nombPista = nombPista;
+    }
+
+    public String gettDuracion() {
+        return tDuracion;
+    }
+
+    public void settDuracion(String tDuracion) {
+        this.tDuracion = tDuracion;
+    }
+
    
 }

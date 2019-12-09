@@ -6,6 +6,20 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion= request.getSession();
+    int rol=Integer.parseInt(String.valueOf(sesion.getAttribute("rol")));
+    if(sesion.getAttribute("usuario") !=null){
+        String usuario=sesion.getAttribute("usuario").toString();
+    }else{
+        response.sendRedirect("login.jsp");
+    }
+    if(rol != 1){
+        session.setAttribute("hid", "none");
+    }else{
+        session.setAttribute("hid", "");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +35,7 @@
    <!-- ======================================================================================================================= -->
    <!-- ================                         ingresando compañia            =============================================== -->
          <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button style="display: ${hid}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   nueva compañia
 </button>
 
@@ -41,10 +55,10 @@
             <div class="row">
                 <div class="col-6"
             <label>Nombre: </label>
-            <input type="text" class="form-control" name="nombre"><br>
+            <input type="text" class="form-control" required name="nombre"><br>
             <!-- ================  lista de pais traido  =============================================== -->
             <label> Pais </label>
-            <select name="pais" id="pais">
+            <select name="pais" id="pais" required>
                 <option class="control-form" value="">Seleccione un pais</option>
                 <c:forEach items="${listap}" var="pa">
                     <option value="${pa.getId()}">${pa.getNombre()}</option>
@@ -75,7 +89,7 @@
                 <td>Codigo</td>
                 <td>Nombre</td>
                 <td>Sede</td>
-                <td>Acciones</td>
+                <td style="display: ${hid}">Acciones</td>
             </tr>
         </thead>
         <% int cod =1; %>
@@ -85,8 +99,8 @@
                     <td><% out.print(cod); %></td>
                     <td>${ver.getNombre()}</td>
                     <td>${ver.getNombrePais()}</td>
-                    <td>
-                        <a class="btn btn-warning" href="/TiendaMusica/compania?action=consultarId&id=${ver.id}">Modificar</a>
+                    <td style="display: ${hid}">
+                        <a  class="btn btn-warning" href="/TiendaMusica/compania?action=consultarId&id=${ver.id}">Modificar</a>
                         <a class="btn btn-danger" href="/TiendaMusica/compania?action=eliminar&id=${ver.id}">ELiminar</a>
                     </td>
                 </tr>

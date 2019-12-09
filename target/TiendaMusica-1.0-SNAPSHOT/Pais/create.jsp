@@ -19,11 +19,11 @@
                 <div class="col-4"><br>
                     <form action="/TiendaMusica/pais?action=insert" method="post">
                         <label>Pais:</label>
-                        <input type="text" class="form form-control" name="nombre" value="">
+                        <input type="text" class="form form-control" required name="nombre" value="">
                         <label>Direccion</label>
-                        <input type="text" class="form form-control" name="direccion" value="">
+                        <input type="text" class="form form-control" required name="direccion" value="">
                         <label>Codigo Postal</label>
-                        <input type="text" class="form form-control" name="codigo_postal" value="">
+                        <input type="text" class="form form-control" required name="codigo_postal" value="">
                         <br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>

@@ -1,0 +1,5 @@
+commit 6b6a51c938d646d6cf614d724be55d68bf9ff9e8
+Author: renelopez <renefrancisco1993lopez@hotmail.com>
+Date:   Sat Nov 30 09:29:50 2019 -0600
+
+    iniciando con git

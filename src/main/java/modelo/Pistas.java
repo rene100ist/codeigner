@@ -14,8 +14,8 @@ import java.time.LocalTime;
 public class Pistas {
     private int id;
     private LocalTime duracion;
-    //foranea
-    private int cd_individual;
+    private String nombre;
+
 
     public Pistas(int id) {
         this.id = id;
@@ -37,12 +37,13 @@ public class Pistas {
         this.duracion = duracion;
     }
 
-    public int getCd_individual() {
-        return cd_individual;
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCd_individual(int cd_individual) {
-        this.cd_individual = cd_individual;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     

@@ -23,11 +23,11 @@
                         <label>Codigo: </label>
                         <input type="text" class="form form-control" readonly="" name="id" value="${co.id}">
                         <label>Nombre: </label>
-                        <input type="text" class="form form-control" name="nombre" value="${co.nombre}">
+                        <input type="text" class="form form-control" required name="nombre" value="${co.nombre}">
                         <br>
                          <!-- ================  lista de pais traido  =============================================== -->
                         <label>Sede:  </label>
-                        <select name="pais" id="pais">
+                        <select name="pais" id="pais" required>
                             <option class="control-form" value="">Seleccione un pais</option>
                             <c:forEach items="${listap}" var="pa">
                                 <option value="${pa.getId()}">${pa.getNombre()}</option>

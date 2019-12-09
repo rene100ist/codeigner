@@ -19,13 +19,13 @@
                 <div class="col-4"><br>
                     <form action="/TiendaMusica/pais?action=update" method="post">
                         <label>Codigo:</label>
-                        <input type="text" class="form form-control" readonly="" name="id" value="${pa.id}">
+                        <input type="text" class="form form-control" required readonly="" name="id" value="${pa.id}">
                         <label>Pais:</label>
-                        <input type="text" class="form form-control" name="nombre" value="${pa.nombre}">
+                        <input type="text" class="form form-control" required name="nombre" value="${pa.nombre}">
                         <label>Direccion</label>
-                        <input type="text" class="form form-control" name="direccion" value="${pa.direccion}">
+                        <input type="text" class="form form-control" required name="direccion" value="${pa.direccion}">
                         <label>Codigo Postal</label>
-                        <input type="text" class="form form-control" name="codigo_postal" value="${pa.codigo_postal}">
+                        <input type="text" class="form form-control" required name="codigo_postal" value="${pa.codigo_postal}">
                         <br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>

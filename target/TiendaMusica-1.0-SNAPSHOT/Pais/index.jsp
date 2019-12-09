@@ -6,6 +6,20 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion= request.getSession();
+    int rol=Integer.parseInt(String.valueOf(sesion.getAttribute("rol")));
+    if(sesion.getAttribute("usuario") !=null){
+        String usuario=sesion.getAttribute("usuario").toString();
+    }else{
+        response.sendRedirect("login.jsp");
+    }
+    if(rol != 1){
+        session.setAttribute("hid", "none");
+    }else{
+        session.setAttribute("hid", "");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +30,7 @@
         <%@include file="../Resources/navbar.jsp" %>
         <div class="container">
             <div class="row">
-                <a class="btn btn-primary" href="/TiendaMusica/pais?action=redi">Ingresar PAis</a>
+                <a style="display: ${hid}" class="btn btn-primary" href="/TiendaMusica/pais?action=redi">Ingresar PAis</a>
                 </div>
             <div class="row">
                 <h1>Listado de Pais</h1>
@@ -27,7 +41,7 @@
                                 <td>Nombre Pais</td>
                                 <td>Direccion</td>
                                 <td>Codigo Postal</td>
-                                <td>Acciones</td>
+                                <td style="display: ${hid}" >Acciones</td>
                             </tr>
                         </thead>
                         <% int cod = 1; %>
@@ -38,9 +52,9 @@
                                     <td>${ver.getNombre()}</td>
                                     <td>${ver.getDireccion()}</td>
                                     <td>${ver.getCodigo_postal()}</td>
-                                    <td>
+                                    <td style="display: ${hid}">
                                         <a class="btn btn-warning" href="/TiendaMusica/pais?action=consultarId&id=${ver.id}">Modificar</a>
-                                        <a class="btn btn-danger" href="/TiendaMusica/pais?action=eliminar&id=${ver.id}">Eliminar</a>
+                                        <a style="display: ${hid}" class="btn btn-danger" href="/TiendaMusica/pais?action=eliminar&id=${ver.id}">Eliminar</a>
                                     </td>
                                 </tr>
                             </tbody> 

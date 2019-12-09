@@ -6,6 +6,20 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion= request.getSession();
+    int rol=Integer.parseInt(String.valueOf(sesion.getAttribute("rol")));
+    if(sesion.getAttribute("usuario") !=null){
+        String usuario=sesion.getAttribute("usuario").toString();
+    }else{
+        response.sendRedirect("login.jsp");
+    }
+    if(rol != 1){
+        session.setAttribute("hid", "none");
+    }else{
+        session.setAttribute("hid", "");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,7 +53,7 @@
             <div class="row">
                 <div class="col-6"
             <label>Nombre: </label>
-            <input type="text" class="form-control" name="nombre"><br>
+            <input type="text" class="form-control" required name="nombre"><br>
            
                 </div>
             </div>
